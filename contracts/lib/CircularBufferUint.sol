@@ -54,14 +54,16 @@ contract CircularBufferUint {
      *
      * @param _maxItems Defines how many items this buffer stores before
      *                  overwriting older items.
+     * @param _initialItem The first item to store in the buffer. Can be `0`.
      */
-    constructor(uint256 _maxItems) public {
+    constructor(uint256 _maxItems, uint256 _initialItem) public {
         require(
             _maxItems > 0,
             "The max number of items to store in a circular buffer must be greater than 0."
         );
 
         items.length = _maxItems;
+        items[0] = _initialItem;
     }
 
 
@@ -103,7 +105,7 @@ contract CircularBufferUint {
     /**
      * @notice Updates the index of the circular buffer to point to the next
      *         slot of where to store an item. Resets to zero if it gets to the
-     *         end of the array that represents the circular.
+     *         end of the array that represents the circular buffer.
      */
     function nextIndex() private {
         index++;

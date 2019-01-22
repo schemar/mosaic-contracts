@@ -84,7 +84,7 @@ contract Anchor is StateRootInterface, Organized, CircularBufferUint {
         OrganizationInterface _organization
     )
         Organized(_organization)
-        CircularBufferUint(_maxStateRoots)
+        CircularBufferUint(_maxStateRoots, _blockHeight)
         public
     {
         require(
@@ -95,7 +95,6 @@ contract Anchor is StateRootInterface, Organized, CircularBufferUint {
         remoteChainId = _remoteChainId;
 
         stateRoots[_blockHeight] = _stateRoot;
-        CircularBufferUint.store(_blockHeight);
     }
 
 

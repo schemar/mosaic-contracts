@@ -23,6 +23,12 @@ build/
 .idea/
 *.iml
 
+# Do not track VS Code files
+.vscode
+
+# Do not track temporary python files
+__pycache__
+
 # LaTeX auxiliary files
 *.aux
 *.log

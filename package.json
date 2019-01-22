@@ -16,14 +16,16 @@
     "rlp": "2.1.0",
     "solidity-coverage": "0.5.11",
     "solparse": "2.2.5",
-    "truffle": "beta",
+    "truffle": "5.0.0",
+    "truffle-flattener": "1.2.10",
     "web3": "1.0.0-beta.36"
   },
   "scripts": {
     "compile": "truffle compile",
     "test": "truffle test",
     "ganache": "sh tools/runGanacheCli.sh",
-    "test:deployment_tool": "mocha tools/deployment_tool/test"
+    "test:deployment_tool": "mocha tools/deployment_tool/test",
+    "manticore": "sh security/manticore/anchor.sh"
   },
   "author": "OpenST Foundation Ltd.",
   "license": "Apache v2.0"
